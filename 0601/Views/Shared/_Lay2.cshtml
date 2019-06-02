@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+    Random rn = new Random();
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <style>
+        div {
+            background: #efcccc;
+            border: 1px solid #0026ff;
+            margin: 0 200px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: 12px 12px 12px 12px;
+        }
+
+            div a,
+            div a:visited {
+                font-size: xx-large;
+                color: white;
+                text-decoration: none;
+            }
+
+                div a:hover {
+                    color: #0ff359;
+                }
+    </style>
+</head>
+<body>
+    <div>
+       @RenderBody()
+    </div>
+</body>
+</html>

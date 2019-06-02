@@ -1,0 +1,59 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UseGet</title>
+</head>
+<body>
+    <div>
+        @*@using (Html.BeginForm("index", "home", FormMethod.Get))
+            {
+
+            }*@
+
+        @*
+                 <form action=@Url.Action("nome","home") method="post">
+                <p>
+                    用戶名稱：
+                    <input type="text" value="" />
+                </p>
+
+                <p>
+                    用戶密碼：
+                    <input type="text" value="" />
+                </p>
+
+                <p>
+                    <input type="submit" value="送出" />
+                </p>
+            </form>
+        *@
+
+        <hr />
+
+        @*這個超連結使用get的方式傳送到後端,該接受Action方法(只接受get)可以收到資料*@
+
+        <p>==使用get方式傳送資料==</p>
+
+        <a href="@Url.Action("nome","home")?username=Hello_world&pwd=youare87">點我傳送頁面>></a>
+
+        <p>==使用get方式傳送資料==</p>
+
+        <hr />
+
+        <p>使用post</p>
+        @using (Html.BeginForm("nome", "home", FormMethod.Post))
+        {
+            @Html.TextBox("id")
+            <input type="submit" value="送出" />
+        }
+        <hr />
+    </div>
+</body>
+</html>

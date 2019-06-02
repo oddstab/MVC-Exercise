@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>哈哈哈</title>
+    <style>
+        div.ccc {
+            background: #abdd97;
+            border: 1px solid #8094d5;
+            margin: 0 100px;
+            height: 600px;
+        }
+
+        .cc {
+            border-radius: 3px 4px 5px 6px;
+            border: 1px solid #ff6a00;
+            background: url(https://i.imgur.com/zry3QpS.jpg);
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="ccc">
+        @*套用Layout的話必須加這個，讓其他畫面顯示在這*@
+        @RenderBody()
+        @Html.Partial("_Lay2");
+    </div>
+
+</body>
+</html>

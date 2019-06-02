@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+    Random rn = new Random();
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <style>
+        div {
+            background: #efcccc;
+            border: 1px solid #0026ff;
+            margin: 0 200px;
+            margin-bottom: 20px;
+            text-align: center;
+            border-radius: 12px 12px 12px 12px;
+        }
+
+            div a,
+            div a:visited
+            {
+                font-size: xx-large;
+                color:white;
+                text-decoration:none;
+            }
+
+            div a:hover{
+                color:#0ff359;
+            }
+    </style>
+</head>
+<body>
+    <div>
+        @for (int i = 0; i < DateTime.Now.Minute; i++)
+        {
+
+            string back_color = "#" + rn.Next(100000, 1000000);
+            string font_color = "#" + rn.Next(100000, 1000000);
+            //                                        上     右     下   左
+            @*<div style="background:@back_color;margin:10px 20px 30px 40px">*@
+            //                                         上   左右   下
+            <div style="background:@back_color;margin:5px 36% 20px">
+                @if (i % 2 == 0)
+                {
+                    <a href="@Url.Action("Download")">下載圖片！</a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Show")">檢視圖片！</a>
+                }
+            </div>
+        }
+
+        @*<p>
+            @Ajax.ActionLink("我是J1啦", "J1", new AjaxOptions())
+        </p>
+
+        <p>
+            @Ajax.ActionLink("我是J2啦", "J2", new AjaxOptions())
+        </p>*@
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿@model  List<_0601.Models.Product>
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <a href="@Url.Action("XML","Home")"><b>這是XML!</b></a><br />
+        <a href="@Url.Action("TEXT","Home")"><b>這是TEXT!</b></a><br />
+        <a href="@Url.Action("HTML","Home")"><b>這是HTML!</b></a>
+        @foreach (var item in Model)
+        {
+            <p><b>@item.Name_P</b></p>
+            <p><b>@item.NO_P</b></p>
+            <p><b>@item.Price_P</b></p>
+            <hr />
+        }
+    </div>
+</body>
+</html>
