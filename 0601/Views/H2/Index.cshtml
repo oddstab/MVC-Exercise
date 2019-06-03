@@ -12,30 +12,46 @@
     <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <style>
-        div {
-            background: #efcccc;
-            border: 1px solid #0026ff;
-            margin: 0 200px;
-            margin-bottom: 20px;
-            text-align: center;
-            border-radius: 12px 12px 12px 12px;
+    p {
+        text-align:left;
+        margin :0 200px;
+        white-space:nowrap;
+    }
+
+    div {
+        background: #efcccc;
+        border: 1px solid #0026ff;
+        margin: 0 200px;
+        margin-bottom: 20px;
+        font-family: 微軟正黑體;
+        text-align: center;
+        border-radius: 12px 12px 12px 12px;
+    }
+
+        div a,
+        div a:visited {
+            font-size: xx-large;
+            color: white;
+            text-decoration: none;
         }
 
-            div a,
-            div a:visited
-            {
-                font-size: xx-large;
-                color:white;
-                text-decoration:none;
+            div a:hover {
+                color: #0ff359;
             }
 
-            div a:hover{
-                color:#0ff359;
-            }
-    </style>
+  </style>
 </head>
 <body>
     <div>
+        <p>
+            原始密碼：@ViewBag.origin
+        </p>
+        <p>
+            加密後：@ViewBag.pwd
+        </p>
+            
+            
+
         @for (int i = 0; i < DateTime.Now.Minute; i++)
         {
 
@@ -43,7 +59,8 @@
             string font_color = "#" + rn.Next(100000, 1000000);
             //                                        上     右     下   左
             @*<div style="background:@back_color;margin:10px 20px 30px 40px">*@
-            //                                         上   左右   下
+            //                                       上   左右   下
+            
             <div style="background:@back_color;margin:5px 36% 20px">
                 @if (i % 2 == 0)
                 {

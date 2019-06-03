@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using _0601.Models;
 
 namespace _0601.Controllers
 {
@@ -11,18 +12,28 @@ namespace _0601.Controllers
         // GET: H2
         public ActionResult Index()
         {
+            
+            return View();
+        }
+
+        public ActionResult PSIndex()
+        {
+            ViewBag.origin = "我是密碼";
+            ViewBag.pwd = Password.SHA512(ViewBag.origin);
+
+
             return View();
         }
 
         public HttpNotFoundResult none()
         {
-            
+
             return HttpNotFound("GG");
         }
 
         public ActionResult J1()
         {
-            return Content("alert('Hello World');","application/x-javascript");
+            return Content("alert('Hello World');", "application/x-javascript");
         }
 
         public JavaScriptResult J2()
@@ -37,10 +48,10 @@ namespace _0601.Controllers
             var Json_obj = new
             {
                 id = 1,
-                name= "名稱",
-                message ="我是json",
+                name = "名稱",
+                message = "我是json",
             };
-            return Json(Json_obj,JsonRequestBehavior.AllowGet);
+            return Json(Json_obj, JsonRequestBehavior.AllowGet);
         }
 
         public FilePathResult Download()
@@ -56,7 +67,7 @@ namespace _0601.Controllers
             string Image_Path = Server.MapPath("~/images/書記gif.gif");
 
 
-            return File(Image_Path,"image/jpg");
+            return File(Image_Path, "image/jpg");
         }
 
         public ActionResult NEW()
