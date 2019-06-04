@@ -13,6 +13,15 @@ namespace _0601
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            //準備一個HandleErrorAttribute
+            var handleError = new HandleErrorAttribute();
+            // 指定HandleError導向的頁面，要指定值  但會吃config的頁面
+            handleError.View = "/Home";
+            // 設定HandleError啟用
+            handleError.Order = 0;
+            //加到全域的filter中
+            GlobalFilters.Filters.Add(handleError);
         }
     }
 }

@@ -50,8 +50,12 @@
         <p>使用post</p>
         @using (Html.BeginForm("nome", "home", FormMethod.Post))
         {
-            @Html.TextBox("id")
+            @*@Html.TextBox("id")*@
+
+            <input type="text" name="id" value="" />
             <input type="submit" value="送出" />
+
+
         }
         <hr />
     </div>

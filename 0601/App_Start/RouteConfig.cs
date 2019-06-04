@@ -30,11 +30,25 @@ namespace _0601
             //    });
 
             routes.MapRoute(
-                name: "Default",
+               name: "Default3",
+               url: "{action}",
+               defaults: new { controller = "H2", action = "Index" }
+           );
+            routes.MapRoute(
+                name: "Default1",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "H2", action = "PSIndex", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "Default2",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-            
+
+           
+
+
         }
     }
 }

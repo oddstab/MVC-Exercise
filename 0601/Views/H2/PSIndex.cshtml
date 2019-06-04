@@ -4,5 +4,21 @@
     Layout = "~/Views/Shared/_Lay2.cshtml";
 }
 
-<h2>PSIndex</h2>
+<style>
+    p{
+        font-size:24px;
+    }
+</style>
+
+<form method="post" action="@Url.Action("PSIndex","H2")">
+    <p>
+        請輸入你的密碼吧：
+        <input type="text" value="" name="ps"/>
+
+        <input type="submit" value="按我送出" /><br />
+        哈哈 你的密碼是:@ViewBag.pw
+    </p>
+        
+</form>
+
 

@@ -11,11 +11,18 @@ namespace _0601.Models
     {
         public static string SHA512(string originText)
         {
-            byte[] data = Encoding.ASCII.GetBytes(originText);
-            SHA512 sha512 = new SHA512CryptoServiceProvider();
-            byte[] result = sha512.ComputeHash(data);
+            try
+            {
+                byte[] data = Encoding.ASCII.GetBytes(originText);
+                SHA512 sha512 = new SHA512CryptoServiceProvider();
+                byte[] result = sha512.ComputeHash(data);
 
-            return Convert.ToBase64String(result);
+                return Convert.ToBase64String(result);
+            }
+            catch
+            {
+                return "ErrorPassword";
+            }
         }
     }
 }
